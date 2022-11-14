@@ -1,0 +1,48 @@
+body {font-size: 12px;
+}
+
+.separador {
+    background-image: url('../Imagenes/separador.png');
+    color: white;
+}
+
+.separadorClima {
+    background-image: url('../Imagenes/separadorClima.png');
+    color: white;
+}
+
+.panel-heading-background {
+    background-image: url('../Imagenes/fondo.png');
+    color: white;
+    font-weight: bold;
+}
+
+.panel_Body_App{
+    background-color: #f6f0f0;
+}
+
+table, tr, td, th
+{
+    border: 1px solid black;
+    border-collapse:collapse;
+}
+
+img.button_open{
+  content:url('../Imagenes/button-closed.png');
+  cursor:pointer;
+}
+
+img.button_closed{
+  content: url('../Imagenes/button-open.png');
+  cursor:pointer;
+}
+
+.ddl {
+    font-size: 12px;
+}
+
+.link {
+    text-decoration: underline;
+    color: red;
+    cursor: pointer;
+}

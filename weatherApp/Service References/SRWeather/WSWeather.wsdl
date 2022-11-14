@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="addUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateDataUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addWeather">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="weather" type="tns:Weather" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Weather">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idClima" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Temperatura" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precipitacion" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Humedad" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="VelocidadViento" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="addWeatherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addWeatherResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataWeather">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDataWeatherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataWeatherResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataWeather">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="weather" type="tns:Weather" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataWeatherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateDataWeatherResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteDataWeather">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idClima" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteDataWeatherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteDataWeatherResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="addUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:addUsuario" />
+  </wsdl:message>
+  <wsdl:message name="addUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:addUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:getDataUsuario" />
+  </wsdl:message>
+  <wsdl:message name="getDataUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateDataUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:updateDataUsuario" />
+  </wsdl:message>
+  <wsdl:message name="updateDataUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:updateDataUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteUsuario" />
+  </wsdl:message>
+  <wsdl:message name="deleteUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="addWeatherSoapIn">
+    <wsdl:part name="parameters" element="tns:addWeather" />
+  </wsdl:message>
+  <wsdl:message name="addWeatherSoapOut">
+    <wsdl:part name="parameters" element="tns:addWeatherResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataWeatherSoapIn">
+    <wsdl:part name="parameters" element="tns:getDataWeather" />
+  </wsdl:message>
+  <wsdl:message name="getDataWeatherSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataWeatherResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateDataWeatherSoapIn">
+    <wsdl:part name="parameters" element="tns:updateDataWeather" />
+  </wsdl:message>
+  <wsdl:message name="updateDataWeatherSoapOut">
+    <wsdl:part name="parameters" element="tns:updateDataWeatherResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteDataWeatherSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteDataWeather" />
+  </wsdl:message>
+  <wsdl:message name="deleteDataWeatherSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteDataWeatherResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSWeatherSoap">
+    <wsdl:operation name="addUsuario">
+      <wsdl:input message="tns:addUsuarioSoapIn" />
+      <wsdl:output message="tns:addUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataUsuario">
+      <wsdl:input message="tns:getDataUsuarioSoapIn" />
+      <wsdl:output message="tns:getDataUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDataUsuario">
+      <wsdl:input message="tns:updateDataUsuarioSoapIn" />
+      <wsdl:output message="tns:updateDataUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsuario">
+      <wsdl:input message="tns:deleteUsuarioSoapIn" />
+      <wsdl:output message="tns:deleteUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addWeather">
+      <wsdl:input message="tns:addWeatherSoapIn" />
+      <wsdl:output message="tns:addWeatherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataWeather">
+      <wsdl:input message="tns:getDataWeatherSoapIn" />
+      <wsdl:output message="tns:getDataWeatherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDataWeather">
+      <wsdl:input message="tns:updateDataWeatherSoapIn" />
+      <wsdl:output message="tns:updateDataWeatherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDataWeather">
+      <wsdl:input message="tns:deleteDataWeatherSoapIn" />
+      <wsdl:output message="tns:deleteDataWeatherSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSWeatherSoap" type="tns:WSWeatherSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addUsuario">
+      <soap:operation soapAction="http://tempuri.org/addUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataUsuario">
+      <soap:operation soapAction="http://tempuri.org/getDataUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataUsuario">
+      <soap:operation soapAction="http://tempuri.org/updateDataUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsuario">
+      <soap:operation soapAction="http://tempuri.org/deleteUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addWeather">
+      <soap:operation soapAction="http://tempuri.org/addWeather" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataWeather">
+      <soap:operation soapAction="http://tempuri.org/getDataWeather" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataWeather">
+      <soap:operation soapAction="http://tempuri.org/updateDataWeather" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDataWeather">
+      <soap:operation soapAction="http://tempuri.org/deleteDataWeather" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSWeatherSoap12" type="tns:WSWeatherSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addUsuario">
+      <soap12:operation soapAction="http://tempuri.org/addUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataUsuario">
+      <soap12:operation soapAction="http://tempuri.org/getDataUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataUsuario">
+      <soap12:operation soapAction="http://tempuri.org/updateDataUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsuario">
+      <soap12:operation soapAction="http://tempuri.org/deleteUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addWeather">
+      <soap12:operation soapAction="http://tempuri.org/addWeather" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataWeather">
+      <soap12:operation soapAction="http://tempuri.org/getDataWeather" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataWeather">
+      <soap12:operation soapAction="http://tempuri.org/updateDataWeather" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDataWeather">
+      <soap12:operation soapAction="http://tempuri.org/deleteDataWeather" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSWeather">
+    <wsdl:port name="WSWeatherSoap" binding="tns:WSWeatherSoap">
+      <soap:address location="http://localhost:60800/WSWeather.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSWeatherSoap12" binding="tns:WSWeatherSoap12">
+      <soap12:address location="http://localhost:60800/WSWeather.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

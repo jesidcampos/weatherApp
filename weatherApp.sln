@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weatherApp", "weatherApp\weatherApp.csproj", "{FC4649B3-E3E8-444C-8B62-3B2DB1037152}"
+	ProjectSection(ProjectDependencies) = postProject
+		{043C7EC6-6F01-4891-96FE-130840CD70A3} = {043C7EC6-6F01-4891-96FE-130840CD70A3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfSWeather", "WcfSWeather\WcfSWeather.csproj", "{043C7EC6-6F01-4891-96FE-130840CD70A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gbdWeather", "gbdWeather\gbdWeather.csproj", "{1B5CCA4A-A7D1-43CA-AA14-8528C44CE507}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC4649B3-E3E8-444C-8B62-3B2DB1037152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4649B3-E3E8-444C-8B62-3B2DB1037152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4649B3-E3E8-444C-8B62-3B2DB1037152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4649B3-E3E8-444C-8B62-3B2DB1037152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{043C7EC6-6F01-4891-96FE-130840CD70A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{043C7EC6-6F01-4891-96FE-130840CD70A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{043C7EC6-6F01-4891-96FE-130840CD70A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{043C7EC6-6F01-4891-96FE-130840CD70A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B5CCA4A-A7D1-43CA-AA14-8528C44CE507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B5CCA4A-A7D1-43CA-AA14-8528C44CE507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B5CCA4A-A7D1-43CA-AA14-8528C44CE507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B5CCA4A-A7D1-43CA-AA14-8528C44CE507}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
