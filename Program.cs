@@ -1,0 +1,21 @@
+using weatherApp.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
+builder.Services.AddHttpClient<WeatherService>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+});
+
+var app = builder.Build();
+
+app.UseCors("AllowAll");
+app.UseDefaultFiles();
+app.UseStaticFiles();
+app.UseRouting();
+app.MapControllers();
+
+app.Run();

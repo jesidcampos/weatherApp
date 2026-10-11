@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>WeatherApp</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f4f8; display: flex; justify-content: center; padding: 50px; margin: 0; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 420px; }
+        h1 { margin-top: 0; color: #007bff; }
+        input { padding: 10px; width: 68%; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
+        button:hover { background: #0056b3; }
+        .resultado { margin-top: 20px; }
+        .temp { font-size: 48px; font-weight: bold; color: #007bff; }
+        .fila { display: flex; justify-content: space-between; margin: 6px 0; padding: 4px 0; border-bottom: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🌤️ WeatherApp</h1>
+        <input type="text" id="ciudad" placeholder="Ej: Bogotá" value="Bogotá">
+        <button onclick="consultar()">Consultar</button>
+        <div class="resultado" id="resultado"></div>
+    </div>
+
+    <script>
+        async function consultar(){
+            const ciudad = document.getElementById('ciudad').value;
+            const div = document.getElementById('resultado');
+            div.innerHTML = '<p>Cargando...</p>';
+
+            try {
+                const res = await fetch(`/api/weather/${encodeURIComponent(ciudad)}`);
+                const data = await res.json();
+
+                if (data.error) {
+                    div.innerHTML = `<p style="color:red">${data.error}</p>`;
+                    return;
+                }
+
+                div.innerHTML=`
+                    <h2>${data.ciudad}</h2>
+                    <div class="temp">${data.temperatura}°C</div>
+                    <p><strong>${data.descripcion}</strong></p>
+                    <div class="fila"><span>Sensación térmica</span><span>${data.sensacionTermica}°C</span></div>
+                    <div class="fila"><span>Humedad</span><span>${data.humedad}°C</span></div>
+                    <div class="fila"><span>Viento</span><span>${data.viento} km/h</span></div>
+
+                `;
+            } catch (err) {
+                div.innerHTML = `<p style="color:red">Error: ${err.message}</p>`;
+            }
+
+        }
+    </script>
+</body>
+</html>
