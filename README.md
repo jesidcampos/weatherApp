@@ -80,5 +80,3 @@ Ingeniero de Sistemas | Desarrollador .NET | Soporte Técnico Remoto
 LinkedIn: yesid-campos-barbosa
 
 GitHub: @jesidcampos
-
-text
